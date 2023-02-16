@@ -25,10 +25,10 @@ document.getElementById('calculator').addEventListener('click', function (event)
     const typedNumber = document.getElementById('nember-typed');
     const priviousTypedNumber = typedNumber.value;
     if (isNaN(number)) {
-        if(number === 'C'){
+        if (number === 'C') {
             typedNumber.value = '';
         }
-        else{
+        else if(number === '<'){
             const disits = priviousTypedNumber.split('');
             disits.pop();
             const remainingDisits = disits.join('');
@@ -36,25 +36,29 @@ document.getElementById('calculator').addEventListener('click', function (event)
         }
     }
     else {
-        const newTypedNumber = priviousTypedNumber + number ;
+        const newTypedNumber = priviousTypedNumber + number;
         typedNumber.value = newTypedNumber;
     }
 })
 
-document.getElementById('pin-submit').addEventListener('click', function(){
+document.getElementById('pin-submit').addEventListener('click', function () {
     const generetedPinNumber = document.getElementById('pin-filed').value;
     const typedPinNumber = document.getElementById('nember-typed').value;
-
+    //  kdsjklfklsdjf
+    
+    
 
     const sunessPinMassage = document.getElementById('match');
     const usunessPinMassage = document.getElementById('not-match');
-    if(generetedPinNumber.length !== 0 && typedPinNumber.length !== 0 && generetedPinNumber === typedPinNumber){
+    if (generetedPinNumber.length !== 0 && typedPinNumber.length !== 0 && generetedPinNumber === typedPinNumber) {
         const sunessPinMassage = document.getElementById('match');
         sunessPinMassage.style.display = 'block';
         usunessPinMassage.style.display = 'none';
     }
-    else{
+    else {
         sunessPinMassage.style.display = 'none';
         usunessPinMassage.style.display = 'block';
     }
 })
+
+
